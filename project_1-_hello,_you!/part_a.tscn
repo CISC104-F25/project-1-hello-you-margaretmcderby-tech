@@ -1,6 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=25 format=3 uid="uid://clwrsdsnmy3md"]
 
 [ext_resource type="PackedScene" uid="uid://4sy4oeoj170" path="res://part_b.tscn" id="1_ys316"]
+[ext_resource type="PackedScene" uid="uid://clhttn3a0ep70" path="res://part_c.tscn" id="2_to4tk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_to4tk"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_0jsbj"]
+sky_material = SubResource("ProceduralSkyMaterial_to4tk")
+
+[sub_resource type="Environment" id="Environment_q6bo7"]
+background_mode = 2
+sky = SubResource("Sky_0jsbj")
+tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
 
@@ -51,6 +64,16 @@ albedo_color = Color(0.298039, 0.380392, 0.188235, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_2unr2"]
 
 [node name="Part_A" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q6bo7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="DirectionalLight3D"]
+transform = Transform3D(-0.562176, 0.303043, -0.769496, -0.693999, 0.333193, 0.638238, 0.449804, 0.892831, 0.0229981, -1.57678, 2.82317, 0.131417)
 
 [node name="PlaceholderFloor" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, 0, 0, 0)
@@ -128,3 +151,9 @@ mesh = SubResource("CylinderMesh_2unr2")
 
 [node name="catmesh" parent="." instance=ExtResource("1_ys316")]
 transform = Transform3D(2.93598, 0, -1.37775, 0, 2.76619, 0, 1.63596, 0, 2.47259, 0.65507, 0.461179, -0.558773)
+
+[node name="Part_C" parent="." instance=ExtResource("2_to4tk")]
+offset_left = 63.8561
+offset_top = 193.552
+offset_right = 63.8561
+offset_bottom = 193.552

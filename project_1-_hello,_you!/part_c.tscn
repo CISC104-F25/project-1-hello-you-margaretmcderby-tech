@@ -1,19 +1,48 @@
-[gd_scene format=3 uid="uid://clhttn3a0ep70"]
+[gd_scene load_steps=3 format=3 uid="uid://clhttn3a0ep70"]
+
+[ext_resource type="Texture2D" uid="uid://d3cmjtfawxf61" path="res://icon.svg" id="1_e15qq"]
+[ext_resource type="Texture2D" uid="uid://c4juplxwa2xdq" path="res://Subject.png" id="2_3seef"]
 
 [node name="Part_C" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 32.0
+offset_right = -1.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlaceholderLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 656.0
-theme_override_font_sizes/font_size = 20
-text = "Add more labels, images, and other Control nodes to this scene to build your personal poster for Part C.
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.331
+anchor_right = 0.043
+anchor_bottom = 0.331
+offset_left = -45.536
+offset_top = -210.488
+offset_right = 934.464
+offset_bottom = -61.488
+theme_override_font_sizes/font_size = 35
+text = "Maggie McDerby"
 
-Remember that you may need to scroll down to \"Theme Overrides > Font Sizes\" in the Inspector 
-to make your labels big enough to read. (This is font size 20px, for reference)."
+[node name="RichTextLabel" type="RichTextLabel" parent="Label"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 57.0
+offset_right = 476.0
+offset_bottom = 226.0
+theme_override_font_sizes/normal_font_size = 30
+text = "I love watching movies! The last movie I watched was \"His Three Daughters\" "
+
+[node name="Icon" type="Sprite2D" parent="Label"]
+position = Vector2(533, 99)
+texture = ExtResource("1_e15qq")
+
+[node name="Subject" type="Sprite2D" parent="Label"]
+position = Vector2(672, 111)
+scale = Vector2(0.0995091, 0.0996732)
+texture = ExtResource("2_3seef")
