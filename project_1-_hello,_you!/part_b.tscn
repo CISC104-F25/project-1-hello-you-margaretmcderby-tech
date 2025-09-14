@@ -1,8 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://4sy4oeoj170"]
+[gd_scene load_steps=7 format=3 uid="uid://4sy4oeoj170"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_vq3a5"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vq3a5"]
 
-[node name="Part_B" type="Node3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_gn0ur"]
 
-[node name="PlaceholderCube" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_vq3a5")
+[sub_resource type="PrismMesh" id="PrismMesh_u6u1k"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nsn63"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_id878"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3sstj"]
+
+[node name="catmesh" type="Node3D"]
+
+[node name="catbody" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0998172, 0, 0, 0, 0.0754927, 0, 0, 0, 0.0942781, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_vq3a5")
+
+[node name="cathead" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0942303, 0, 0, 0, 0.091077, 0, 0, 0, 0.0913169, -0.000796229, 0.0980385, -0.000124037)
+mesh = SubResource("SphereMesh_gn0ur")
+
+[node name="catearleft" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0389479, -0.011976, 0, 0.0129638, 0.0359803, 0, 0, 0, 0.0237417, -0.0226714, 0.142905, 0.00543812)
+mesh = SubResource("PrismMesh_u6u1k")
+
+[node name="catearright" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.036118, 0.0180198, -2.63062e-05, -0.0195061, 0.033366, -8.26165e-06, 3.32319e-05, 3.15768e-05, 0.0237417, 0.0263304, 0.142905, 0.00543812)
+mesh = SubResource("PrismMesh_u6u1k")
+
+[node name="catfrontlegright" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0240721, 0, 0, 0, 0.0384983, 0, 0, 0, 0.0296191, 0.0242254, -0.0198505, 0.0445135)
+mesh = SubResource("CapsuleMesh_nsn63")
+
+[node name="catfrontlegleft" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0240721, 0, 0, 0, 0.0384983, 0, 0, 0, 0.0296191, -0.0293747, -0.0198505, 0.040321)
+mesh = SubResource("CapsuleMesh_nsn63")
+
+[node name="catbacklegright" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0188734, 0, 0, 0, 0.0259233, 0, 0, 0, 0.0608852, 0.0479702, -0.0290116, 0)
+mesh = SubResource("CapsuleMesh_id878")
+
+[node name="catbacklegleft" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0188734, 0, 0, 0, 0.0259233, 0, 0, 0, 0.0608852, -0.0484091, -0.0290116, 0)
+mesh = SubResource("CapsuleMesh_id878")
+
+[node name="cattail" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0158912, 0, 0, 0, 0.075531, 0.00689362, 0, -0.0429198, 0.0121315, -0.00706089, 0.00175766, -0.0559493)
+mesh = SubResource("CapsuleMesh_3sstj")

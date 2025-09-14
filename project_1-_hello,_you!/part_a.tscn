@@ -1,4 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=21 format=3 uid="uid://clwrsdsnmy3md"]
+
+[ext_resource type="PackedScene" uid="uid://4sy4oeoj170" path="res://part_b.tscn" id="1_ys316"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
 
@@ -123,3 +125,6 @@ mesh = SubResource("CylinderMesh_2unr2")
 [node name="topspeakerleft" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.014423, 0.0130963, 0, -0.151423, 0.00124743, 0, 0, 0, 0.157533, -1.88655, 0.382563, 0.954581)
 mesh = SubResource("CylinderMesh_2unr2")
+
+[node name="catmesh" parent="." instance=ExtResource("1_ys316")]
+transform = Transform3D(2.93598, 0, -1.37775, 0, 2.76619, 0, 1.63596, 0, 2.47259, 0.65507, 0.461179, -0.558773)
